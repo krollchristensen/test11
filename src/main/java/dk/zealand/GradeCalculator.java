@@ -2,8 +2,12 @@ package dk.zealand;
 
 public class GradeCalculator {
     public String getGrade(int score) {
-        if (score < 0 || score > 100) {
-            throw new IllegalArgumentException("Score must be between 0 and 100");
+        if (score < 0 || score > 199) {
+            throw new IllegalArgumentException("Score must be between 0 and 199");
+        }
+
+        if (score >= 101) {
+            return "Surb";
         }
 
         if (score >= 90) {
@@ -21,4 +25,3 @@ public class GradeCalculator {
         return "F";
     }
 }
-

@@ -16,6 +16,12 @@ class GradeCalculatorTest {
     }
 
     @Test
+    void returnsSurbForScoresFrom101To199() {
+        assertEquals("Surb", calculator.getGrade(101));
+        assertEquals("Surb", calculator.getGrade(199));
+    }
+
+    @Test
     void returnsBForScoresFrom80To89() {
         assertEquals("B", calculator.getGrade(80));
         assertEquals("B", calculator.getGrade(89));
@@ -45,8 +51,7 @@ class GradeCalculatorTest {
     }
 
     @Test
-    void throwsForScoreAbove100() {
-        assertThrows(IllegalArgumentException.class, () -> calculator.getGrade(101));
+    void throwsForScoreAbove199() {
+        assertThrows(IllegalArgumentException.class, () -> calculator.getGrade(200));
     }
 }
-
